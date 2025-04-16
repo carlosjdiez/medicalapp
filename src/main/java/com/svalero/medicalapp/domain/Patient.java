@@ -20,19 +20,19 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false) // Obligatorio
+    @Column
     private String name;
 
-    @Column(nullable = false) // Obligatorio
+    @Column
     private String surname;
 
-    @Column(nullable = false, unique = true) // Email único
+    @Column
     private String email;
 
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
-    @Column(nullable = false) // Obligatorio
+    @Column
     private boolean insured;
 
     @Column(name = "phone_number")
