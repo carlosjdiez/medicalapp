@@ -1,12 +1,14 @@
 package com.svalero.medicalapp.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -29,13 +31,18 @@ public class Patient {
     @Column
     private String email;
 
-    @Column(name = "birth_date")
-    private LocalDate birthDate;
+    @Column(name = "registration_date")
+    private LocalDate registrationDate;
 
     @Column
     private boolean insured;
 
     @Column(name = "phone_number")
     private String phoneNumber;
+
+    @Column
+    @OneToMany(mappedBy = "patient")
+    @JsonBackReference(value="patients_appointments")
+    private List<Appointment> appointment;
 
 }

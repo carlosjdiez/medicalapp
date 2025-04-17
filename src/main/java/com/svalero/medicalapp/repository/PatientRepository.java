@@ -8,13 +8,16 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 import java.util.List;
 
-@Repository
+@Repository //Capa Repository
 public interface PatientRepository extends CrudRepository<Patient, Long> {
 
     List<Patient> findAll();
     List<Patient> findBySurnameContainingIgnoreCase(String surname);
-    List<Patient> findByBirthDate(LocalDate birthDate);
     List<Patient> findByInsured(boolean insured);
+    List<Patient> findBySurname (String surname);
+    List<Patient> findBySurnameAndEmailAndPhoneNumber (String surname, String email, String phoneNumber);
+    List<Patient> findByEmail (String email);
+    List<Patient> findByPhoneNumber (String phoneNumber);
 
     @Query("SELECT p FROM Patient p WHERE p.email = :email")
     List<Patient> findByEmailJPQL(String email);

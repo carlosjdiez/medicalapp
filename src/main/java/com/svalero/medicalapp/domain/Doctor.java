@@ -1,9 +1,12 @@
 package com.svalero.medicalapp.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -33,5 +36,10 @@ public class Doctor {
 
     @Column(name = "years_experience")
     private int yearsExperience;
+
+    @Column
+    @OneToMany(mappedBy = "doctors")
+    @JsonBackReference(value ="doctors_appointments")
+    private List<Appointment> appointment;
 
 }

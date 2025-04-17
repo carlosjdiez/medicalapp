@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+@Repository //Capa Repository
 public interface ClinicRepository extends CrudRepository<Clinic, Long> {
 
     List<Clinic> findAll();
