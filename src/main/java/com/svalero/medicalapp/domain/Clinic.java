@@ -38,7 +38,7 @@ public class Clinic {
     private boolean open;
 
     @Column
-    @OneToMany(mappedBy = "clinics")
+    @OneToMany(mappedBy = "clinic")
     @JsonBackReference(value ="clinics_appointments")
-    private List<Appointment> appointment;
+    private List<Appointment> appointments;
 }

@@ -5,7 +5,9 @@ package com.svalero.medicalapp.domain.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.time.LocalDateTime;
+
+import java.time.LocalDate;
+
 
 
 @Data
@@ -15,11 +17,9 @@ import java.time.LocalDateTime;
 public class AppointmentOutDto {
 
     private long id;
-    private int patientId;  // Relación con Patient
-    private int doctorId; // Relación con Doctor
-    private LocalDateTime dateTime;
+    private LocalDate dateTime;
     private String reason;
     private String status;
-
+    private int patientId;  // Relación con Patient
 
 }

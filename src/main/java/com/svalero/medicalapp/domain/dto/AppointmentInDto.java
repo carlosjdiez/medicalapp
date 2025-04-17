@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 
 @Data
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class AppointmentInDto {
 
     @NotNull(message = "El campo dateTime es obligatorio")
-    private LocalDateTime dateTime;
+    private LocalDate dateTime;
     @NotNull(message = "El campo reason es obligatorio")
     private String reason;
     private String status;

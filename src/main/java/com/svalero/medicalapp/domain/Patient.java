@@ -43,6 +43,6 @@ public class Patient {
     @Column
     @OneToMany(mappedBy = "patient")
     @JsonBackReference(value="patients_appointments")
-    private List<Appointment> appointment;
+    private List<Appointment> appointments;
 
 }

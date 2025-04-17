@@ -11,9 +11,11 @@ import java.util.List;
 public interface DoctorRepository extends CrudRepository<Doctor, Long> {
 
     List<Doctor> findAll();
-    List<Doctor> findBySpecialtyContainingIgnoreCase(String specialty);
-    List<Doctor> findByActive(boolean active);
-    List<Doctor> findByYearsExperienceGreaterThanEqual(int years);
+    List<Doctor> findBySurname(String surname);
+    List<Doctor> findBySpecialty(String specialty);
+    List<Doctor> findByEmail(String email);
+    List<Doctor> findBySurnameAndSpecialtyAndEmail(String surname, String specialty, String email);
+
 
     @Query("SELECT d FROM Doctor d WHERE d.email = :email")
     Doctor findByEmailJPQL(String email);

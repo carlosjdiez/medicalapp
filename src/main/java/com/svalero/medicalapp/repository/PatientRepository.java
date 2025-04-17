@@ -12,8 +12,6 @@ import java.util.List;
 public interface PatientRepository extends CrudRepository<Patient, Long> {
 
     List<Patient> findAll();
-    List<Patient> findBySurnameContainingIgnoreCase(String surname);
-    List<Patient> findByInsured(boolean insured);
     List<Patient> findBySurname (String surname);
     List<Patient> findBySurnameAndEmailAndPhoneNumber (String surname, String email, String phoneNumber);
     List<Patient> findByEmail (String email);

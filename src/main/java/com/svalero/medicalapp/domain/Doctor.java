@@ -38,8 +38,8 @@ public class Doctor {
     private int yearsExperience;
 
     @Column
-    @OneToMany(mappedBy = "doctors")
+    @OneToMany(mappedBy = "doctor")
     @JsonBackReference(value ="doctors_appointments")
-    private List<Appointment> appointment;
+    private List<Appointment> appointments;
 
 }

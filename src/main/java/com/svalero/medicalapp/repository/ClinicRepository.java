@@ -11,8 +11,9 @@ import java.util.List;
 public interface ClinicRepository extends CrudRepository<Clinic, Long> {
 
     List<Clinic> findAll();
-    List<Clinic> findByCityContainingIgnoreCase(String city);
-    List<Clinic> findByOpen(boolean open);
+    List<Clinic> findByName(String name);
+    List<Clinic> findByCity(String city);
+    List<Clinic> findByNameAndCityAndPostalCode(String name, String city, String postalCode);
     List<Clinic> findByPostalCode(String postalCode);
 
     @Query("SELECT c FROM Clinic c WHERE c.name = :name")

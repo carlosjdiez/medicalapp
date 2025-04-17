@@ -11,9 +11,11 @@ import java.util.List;
 public interface SpecialtyRepository extends CrudRepository<Specialty, Long> {
 
     List<Specialty> findAll();
-    List<Specialty> findByNameContainingIgnoreCase(String name);
-    List<Specialty> findByActive(boolean active);
-    List<Specialty> findByRequiresReferral(boolean requiresReferral);
+    List<Specialty> findByName(String name);
+    List<Specialty> findByRequiresReferral(Boolean requiresReferral);
+    List<Specialty> findByActive(Boolean active);
+    List<Specialty> findByNameAndRequiresReferralAndActive(String name, Boolean requiresReferral, Boolean active);
+
 
     @Query("SELECT s FROM Specialty s WHERE s.name LIKE %:keyword%")
     List<Specialty> searchByNameJPQL(String keyword);

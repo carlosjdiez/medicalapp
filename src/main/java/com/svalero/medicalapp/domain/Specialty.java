@@ -35,7 +35,7 @@ public class Specialty {
     private boolean active;
 
     @Column
-    @OneToMany(mappedBy = "specialties")
+    @OneToMany(mappedBy = "specialty")
     @JsonBackReference(value ="specialties_appointments")
-    private List<Appointment> appointment;
+    private List<Appointment> appointments;
 }
